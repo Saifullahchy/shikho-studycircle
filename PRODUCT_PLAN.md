@@ -14,7 +14,7 @@ Access confirmed from:
 
 * Incognito browser: `Yes / No`
 * Non-owner device/account: `Yes / No`
-* Date checked: `PASTE_DATE`
+* Date checked: `18/06/2026`
 
 ---
 
