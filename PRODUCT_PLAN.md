@@ -2,9 +2,8 @@
 
 ## Public Links
 
-* **Live V1 prototype:** `PASTE_VERCEL_LINK_HERE`
-* **Build trace / prompt log:** `PASTE_BUILD_TRACE_LINK_HERE`
-* **GitHub repo:** `PASTE_REPO_LINK_HERE`
+* **Live V1 prototype:** https://shikho-studycircle.vercel.app/
+* **GitHub repo:** https://github.com/Saifullahchy/shikho-studycircle
 * **V1/V2/V3 plan:** This document
 
 ## Access Check
