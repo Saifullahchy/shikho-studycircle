@@ -179,6 +179,7 @@ export function PracticeScreen({ circleId }) {
             isLastQuestion={isLastQuestion}
             isCorrect={isCorrect}
             onReset={handleResetQuestion}
+            onPrevious={() => setCurrentIndex((current) => Math.max(0, current - 1))}
             onNext={handleNextQuestion}
           />
         ) : (
@@ -325,7 +326,16 @@ function ExplanationCard({ explanation, commonMistake, source }) {
   );
 }
 
-function PracticeActionPanel({ isLastQuestion, isCorrect, onReset, onNext }) {
+function PracticeActionPanel({
+  isLastQuestion,
+  isCorrect,
+  onReset,
+  onPrevious,
+  onNext,
+}) {
+  const secondaryLabel = isCorrect ? "পূর্ববর্তী প্রশ্ন" : "আবার চেষ্টা";
+  const handleSecondaryAction = isCorrect ? onPrevious : onReset;
+
   return (
     <Card className="rounded-[22px] bg-white p-4">
       <div className="mb-3">
@@ -342,17 +352,21 @@ function PracticeActionPanel({ isLastQuestion, isCorrect, onReset, onNext }) {
       <div className="grid grid-cols-[1fr_1.45fr] gap-3">
         <button
           type="button"
-          onClick={onReset}
-          className="flex h-[52px] items-center justify-center gap-2 rounded-[16px] border border-[#D5DDE8] bg-white px-4 text-[14px] font-bold text-[#374151] transition active:scale-[0.98]"
+          onClick={handleSecondaryAction}
+          className="flex h-[48px] items-center justify-center gap-2 rounded-[14px] border border-[#D5DDE8] bg-white px-3 text-[13px] font-bold whitespace-nowrap text-[#374151] transition active:scale-[0.98]"
         >
-          <Refresh size="18" variant="Bold" color="#374151" />
-          <span>আবার চেষ্টা</span>
+          {isCorrect ? (
+            <ArrowRight2 size="18" variant="Bold" color="#374151" className="rotate-180" />
+          ) : (
+            <Refresh size="18" variant="Bold" color="#374151" />
+          )}
+          <span>{secondaryLabel}</span>
         </button>
 
         {isLastQuestion ? (
           <Link
             href="/progress"
-            className="flex h-[52px] items-center justify-center gap-2 rounded-[16px] bg-[#16A34A] px-4 text-[15px] font-extrabold text-white shadow-[0_10px_22px_rgba(22,163,74,0.22)] transition active:scale-[0.98]"
+            className="flex h-[48px] items-center justify-center gap-2 rounded-[14px] bg-[#16A34A] px-3 text-[13px] font-extrabold whitespace-nowrap text-white shadow-[0_10px_22px_rgba(22,163,74,0.22)] transition active:scale-[0.98]"
           >
             <span>প্রগ্রেস দেখুন</span>
             <ArrowRight2 size="18" variant="Bold" color="#FFFFFF" />
@@ -361,7 +375,7 @@ function PracticeActionPanel({ isLastQuestion, isCorrect, onReset, onNext }) {
           <button
             type="button"
             onClick={onNext}
-            className="flex h-[52px] items-center justify-center gap-2 rounded-[16px] bg-[#2563EB] px-4 text-[15px] font-extrabold text-white shadow-[0_10px_22px_rgba(37,99,235,0.22)] transition active:scale-[0.98]"
+            className="flex h-[48px] items-center justify-center gap-2 rounded-[14px] bg-[#2563EB] px-3 text-[13px] font-extrabold whitespace-nowrap text-white shadow-[0_10px_22px_rgba(37,99,235,0.22)] transition active:scale-[0.98]"
           >
             <span className="text-white">পরবর্তী প্রশ্ন</span>
             <ArrowRight2 size="18" variant="Bold" color="#FFFFFF" />

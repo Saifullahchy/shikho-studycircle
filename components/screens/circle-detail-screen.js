@@ -91,7 +91,7 @@ export function CircleDetailScreen({ circleId }) {
         }
       />
 
-      <div className="-mt-5 flex-1 space-y-4 px-5 pb-[178px]">
+      <div className="-mt-5 flex-1 space-y-4 px-5 pb-4">
         {/* Status card */}
         <Card className="rounded-[22px] border-[#D9E7FF] bg-white p-4 shadow-[0_10px_28px_rgba(37,99,235,0.08)]">
           <div className="flex items-center justify-between gap-3">
