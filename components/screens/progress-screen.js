@@ -45,9 +45,9 @@ export function ProgressScreen() {
         backHref="/"
       />
 
-      <div className="mt-12  space-y-3 px-4 pb-6">
+      <div className="-mt-6  space-y-3 px-4 pb-6">
         {/* Hero */}
-        <Card className="overflow-hidden rounded-[22px] border-0 bg-gradient-to-br from-[#2563EB] to-[#1D4ED8] p-4 text-white shadow-[0_10px_26px_rgba(37,99,235,0.18)]">
+        <Card className="overflow-hidden rounded-[22px] border-0 bg-gradient-to-br from-[#001f61] to-[#0332b4] p-4 text-white shadow-[0_10px_26px_rgba(37,99,235,0.18)]">
           <div className="flex items-start justify-between gap-4">
             <div className="min-w-0">
               <p className="text-[13px] font-bold leading-5 text-white/75">
@@ -89,7 +89,7 @@ export function ProgressScreen() {
         </Card>
 
         {/* Metrics */}
-        <div className="grid grid-cols-2 ">
+        <div className="grid grid-cols-2 gap-2 ">
           <MetricCard
             icon={<Book1 size="21" variant="Bold" color="#2563EB" />}
             label="মোট MCQ"
