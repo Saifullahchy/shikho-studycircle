@@ -12,8 +12,8 @@ This prototype is viewable without login, download, or access request.
 
 Access confirmed from:
 
-* Incognito browser: `Yes / No`
-* Non-owner device/account: `Yes / No`
+* Incognito browser: `Yes`
+* Non-owner device/account: `Yes`
 * Date checked: `18/06/2026`
 
 ---
